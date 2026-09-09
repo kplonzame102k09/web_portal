@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration; use Illuminate\Database\Schema\Blueprint; use Illuminate\Support\Facades\Schema;
+return new class extends Migration {public function up():void{Schema::create('portal_records',function(Blueprint $table){$table->id();$table->string('type')->index();$table->foreignId('student_id')->nullable()->constrained('users')->nullOnDelete();$table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();$table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();$table->string('status')->nullable()->index();$table->date('record_date')->nullable()->index();$table->json('data')->nullable();$table->timestamps();});}public function down():void{Schema::dropIfExists('portal_records');}};

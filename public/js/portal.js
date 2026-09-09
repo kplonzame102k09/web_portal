@@ -1,0 +1,1 @@
+document.querySelectorAll('form').forEach(form=>form.addEventListener('submit',event=>{const button=form.querySelector('button[type=submit]');if(button&&!form.dataset.confirmed){button.disabled=true;button.classList.add('opacity-60')}}));
